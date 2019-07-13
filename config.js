@@ -6,6 +6,11 @@ const config = {
 hr{
     border-top:1px solid #67696f;
 }
+pre{
+    padding: 10px;
+    background: #465471;
+    color: #d8d8da;
+}
 .container{
         max-width:100%;
         width:100%;
@@ -189,7 +194,11 @@ hr{
     td,th{
         border: 1px solid #ddd;
         padding: 10px;
-    }    
+    } 
+    pre{
+        padding: 10px;
+        background: #e6f7f9;
+    }
     a{
         color:#222;
     }
