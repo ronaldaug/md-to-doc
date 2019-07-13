@@ -300,6 +300,7 @@ hr{
         border-right:1px solid #ddd;
         width:290px;
         height:100%;
+        overflow-y: scroll;
     }
     .right-sidebar{
         position:fixed;
