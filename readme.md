@@ -1,8 +1,8 @@
 ## Markdown files to gitbook style documentation
 ----
-- [Getting Started](#)
-- [Features](#)
-- [Libraries](#)
+- [Getting Started](#getting-started)
+- [Features](#features)
+- [Libraries](#libraries)
 
 <img src="https://res.cloudinary.com/dpnea22ek/image/upload/v1563042832/md.jpg" width="100%">
 ----
@@ -18,17 +18,23 @@ php -S localhost:8081
 
 > **Here, If you're a window os user or if you can't serve the generator, you can host in Xampp or Mamp**
 
-#### 3 - Open and generate it
+#### 2 - Open and generate it
+
 ----
+
 ## Features
+
 - Dark and Light themes.
 - Smooth scroll
 - Bootstrap 4 
 - Responsive Design
 
 <img src="https://res.cloudinary.com/dpnea22ek/image/upload/v1563044168/dl.jpg" width="100%">
+
 ----
+
 ## Libraries
+
 - filesaver js
 - zipjs
 - bootswatch (cosmo theme)
