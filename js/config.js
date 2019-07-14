@@ -1,3 +1,5 @@
+// This is a configuration file of the output HTML layout.
+
 const config = {
     darkTheme:`body{
     color:#c3c3c3;

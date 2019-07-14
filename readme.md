@@ -1,10 +1,26 @@
 ## Markdown files to gitbook style documentation
 ----
-- [Getting Started](#getting-started)
 - [Features](#features)
+- [Getting Started](#getting-started)
 - [Libraries](#libraries)
 
 <img src="https://res.cloudinary.com/dpnea22ek/image/upload/v1563042832/md.jpg" width="100%">
+----
+
+#### Only 3 KB in gzip
+
+---- 
+## Features
+
+- Dark and Light themes
+- Pagination ( next and previous )
+- Responsive Design
+- Detect "h1" in a page and make a content menu.
+- Smooth scroll for anchor links
+- Bootstrap 4 
+
+<img src="https://res.cloudinary.com/dpnea22ek/image/upload/v1563044168/dl.jpg" width="100%">
+
 ----
 
 ## Getting Started
@@ -22,18 +38,7 @@ php -S localhost:8081
 
 ----
 
-## Features
-
-- Dark and Light themes.
-- Smooth scroll
-- Bootstrap 4 
-- Responsive Design
-
-<img src="https://res.cloudinary.com/dpnea22ek/image/upload/v1563044168/dl.jpg" width="100%">
-
-----
-
-## Libraries
+## Credit Libraries
 
 - filesaver js
 - zipjs
