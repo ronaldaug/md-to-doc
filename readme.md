@@ -2,7 +2,7 @@
 ----
 - [Features](#features)
 - [Getting Started](#getting-started)
-- [Libraries](#libraries)
+- [Libraries](#credit-libraries)
 
 ----
 
