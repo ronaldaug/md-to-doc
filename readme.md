@@ -4,10 +4,16 @@
 - [Getting Started](#getting-started)
 - [Libraries](#libraries)
 
-<img src="https://res.cloudinary.com/dpnea22ek/image/upload/v1563042832/md.jpg" width="100%">
 ----
 
-#### Only 3 KB in gzip
+#### Watch how I generate 
+[![asciicast](https://res.cloudinary.com/dpnea22ek/image/upload/v1563085680/play.jpg)](https://www.youtube.com/watch?v=yU9iFXC2nI8)
+
+---- 
+
+#### It's only 3 kb in gzip
+
+<img src="https://res.cloudinary.com/dpnea22ek/image/upload/v1563042832/md.jpg" width="100%">
 
 ---- 
 ## Features
