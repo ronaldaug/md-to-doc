@@ -7,7 +7,7 @@
 ----
 
 #### Watch how I generate 
-[![asciicast](https://res.cloudinary.com/dpnea22ek/image/upload/v1563085680/play.jpg)](https://www.youtube.com/watch?v=yU9iFXC2nI8)
+<a href="https://www.youtube.com/watch?v=yU9iFXC2nI8" target="_blank"><img width="400" src="https://res.cloudinary.com/dpnea22ek/image/upload/v1563085680/play.jpg"></a>
 
 ---- 
 
