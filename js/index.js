@@ -52,6 +52,11 @@ const mdFiles = document.querySelector("#files");
 
             zip.file(`${name}.html`, htmlpage);
        }
+
+       // if user check light or dark theme
+       const theme = document.querySelector('input[name="theme"]:checked').value;
+       const styleText = theme == 'dark'?darkTheme:lightTheme;
+
        // create JS folder
        const jsFolder = zip.folder("js");
 
@@ -64,10 +69,7 @@ const mdFiles = document.querySelector("#files");
        // Add css codes to style.css
        cssFolder.file('style.css', styleText);
 
-       // if user check light or dark theme
-       const theme = document.querySelector('input[name="theme"]:checked').value;
-       const styleText = theme == 'dark'?darkTheme:lightTheme;
-
+    
        // Download zip folder with time stamp
        zip.generateAsync({type:"blob"})
             .then(function(content) {

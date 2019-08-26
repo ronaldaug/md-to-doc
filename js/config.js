@@ -5,6 +5,20 @@ const config = {
     color:#c3c3c3;
     background:#2c3a56;
 }
+h1,h2,h3{
+    padding:30px 0 30px;
+    border-top:1px solid #ddd;
+}
+.main-content h1:first-child{
+    border-top:0;
+}
+h1,h2,h3{
+    padding:30px 0 30px;
+    border-top:1px solid #ddd;
+}
+.main-content h1:first-child{
+    border-top:0;
+}
 hr{
     border-top:1px solid #67696f;
 }
@@ -408,7 +422,6 @@ pre{
     mainContent:(name,source)=>{
         return `<div class="main-content p-4 mb-2">
         <h1 class="page-title my-5">${name}</h1>
-    <hr>
     ${source}
     </div>`;
     },
