@@ -3,12 +3,16 @@
 ## Markdown files to gitbook style documentation
 ----
 
+<img src="https://res.cloudinary.com/dpnea22ek/image/upload/v1563042832/md.jpg" style="width:100%">
+
+----
+
 ## Features
 
 - Custom Theme Color
 - Pagination ( next and previous )
 - Responsive Design
-- Detect "h1" in a page and make a content menu.
+- Left and Right content menus
 - Smooth scroll for anchor links
 - Bootstrap 4
 
