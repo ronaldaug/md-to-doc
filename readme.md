@@ -8,6 +8,7 @@
 - Custom Theme Color
 - Pagination ( next and previous )
 - Responsive Design
+- Left and Right content menus
 - Smooth scroll for anchor links
 - Bootstrap 4
 
