@@ -1,216 +1,54 @@
 // This is a configuration file of the output HTML layout.
 
 const config = {
-    darkTheme:`body{
-    color:#c3c3c3;
-    background:#2c3a56;
-}
-h1,h2,h3{
-    padding:30px 0 30px;
-    border-top:1px solid #ddd;
-}
-.main-content h1:first-child{
-    border-top:0;
-}
-h1,h2,h3{
-    padding:30px 0 30px;
-    border-top:1px solid #ddd;
-}
-.main-content h1:first-child{
-    border-top:0;
-}
-hr{
-    border-top:1px solid #67696f;
-}
-pre{
-    padding: 10px;
-    background: #465471;
-    color: #d8d8da;
-}
-.container{
-        max-width:100%;
-        width:100%;
-    }
-    td,th{
-        border: 1px solid #ddd;
-        padding: 10px;
-    }    
-    a{
-        color:#c3c3c3;
-    }
-    a:hover{
-        color:#44ecfc;
-        text-decoration:none;
-    }
-    .fa {
-        font-size: 20px;
-    }
-    .fa:hover{
-        cursor:pointer;
-    }
-    .main-content p img{
-        width:100%;
-    }
-    .logo-wrap span.logo,.logo-center-wrap span.logo{
-        font-weight: bold;
-        font-size: 22px;
-        border-radius:2px;
-        color: #fff;
-        padding: 10px 16px;
-        background: #7af1fc;
-    }
-    .logo-center-wrap{
-        width:100%;
-        height:80px;
-        text-align:center;
-        line-height:80px;
-        display:none;
-    }
-   .page-title,.navbar-brand,.up-case{
-     text-transform: uppercase;
-   }
-   .right-sidebar ul li a.active {
-        color: #44ecfc;
-    }
-    .right-sidebar ul li a.active:before {
-        background: #44ecfc;
-        height: 100%;
-        width: 2px;
-        left: -26px;
-        top: 0;
-        position: absolute;
-        content: '';
-    }
-    .logo-wrap {
-        border-bottom: 1px solid #67696f;
-        width:100%;
-        height: 80px;
-        line-height: 80px;
-        text-align:center;
-    }
-    .back-btn{
-        display:none;
-    }
-    ul li.list-group-item{
-        background-color:transparent;
-        padding:6px;
-        border:1px solid transparent;
-    }
-    ul li.list-group-item a{
-        text-decoration:none;
-        text-transform: capitalize;
-    }
-    ul.right-menu li a{
-        font-size:12px;
-    }
-    ul.right-menu li a:hover{
-        color:#44ecfc;
+    styleFunc : function(color){
+    return `body {
+        font-family: Roboto, sans-serif;
+        letter-spacing:0.01rem;
+        color:#444;
     }
 
-
-    ul.left-menu li.list-group-item:hover{
-        background:#1e2940;
-    }
-    ul.left-menu li.list-group-item.active{
-        background:#475571;
-        border-left:1px solid #67696f;
-        border-bottom:1px solid #67696f;
-        border-right:1px solid #fff;
-    }
-    ul.left-menu li.list-group-item.active a{
-        color:#f0f7f9;
+    h1,h2,h3,h4,h5,h6{
+        font-family:'Rokkitt',sans-serif;
+        color:#000;
     }
 
-    ul.left-menu li.list-group-item{
+    h1,h2{
+        position:relative;
         padding-left:20px;
-        border-top:1px solid #67696f;
     }
-    ul.left-menu li.list-group-item:first-child{
-        border-top:1px solid transparent;
-    }
-    
-    .back-btn {
-        box-shadow: 0 1px 5px #96a5c3;
-        background: #475571;
-        width: 100%;
-        padding: 10px;
-        border-radius: 4px;
-        height: 50px;
-        width: 100%;
-        line-height: 50px;
-    }
-    
-    .left-sidebar{
-        transition:all ease 0.4s;
-        z-index: 1;
-        position:fixed;
-        background: #2c3a56;
-        top:0;
+
+    h1:before,h2:before{
         left:0;
-        border-right:1px solid #ddd;
-        width:290px;
-        height:100%;
+        content:"";
+        position:absolute;
+        background:${color};
     }
-    .right-sidebar{
-        position:fixed;
-        top:0;
-        right:0;
-        width:210px;
-        border-left:1px solid #ddd;
+
+    h1:before{
+       top:0;
+       width:6px;
+       height:100%;
     }
-    .page-box-left,.page-box-right{
-        box-shadow: 0 1px 5px #96a5c3;
-        background:#475571;
-        width: 100%;
-        padding:10px;
-        border-radius:4px;
+
+    h2:before{
+       top:15%;
+       width:2px;
+       height:60%;
     }
-    .page-box-right {
-        text-align:right;
-    }
-    .page-box-right:hover,.page-box-left:hover{
-        border:1px solid #7af1fc;
-    }
-    @media (max-width:992px){
-        .logo-wrap{
-            display:none;
-        }
-        .back-btn{
-            display:block;
-        }
-        .left-sidebar{
-            transform:translateX(-100%);
-        }
-        .right-sidebar{
-            display:none;
-        }
-        .right-sidebar{
-            border-left:0;
-        }
-       .logo-center-wrap{
-            display:block;
-            box-shadow:0 1px 5px #ddd;
-        }
-        .logo-center-wrap div.row{
-            width:100%;
-            padding:0;
-            margin:0;
-        }
-    }
-    @media (max-width:578px){
-        .logo{
-            transform:scale(0.8);
-        }
-    }
-    `,
-    lightTheme:`.container{
+    .container{
         max-width:100%;
         width:100%;
     }
     td,th{
         border: 1px solid #ddd;
         padding: 10px;
-    } 
+    }
+    blockquote p {
+        border-left: 2px solid #ddd;
+        padding: 10px;
+        background: #99999921;
+    }
     pre{
         padding: 10px;
         background: #e6f7f9;
@@ -236,7 +74,7 @@ pre{
         border-radius:2px;
         color: #fff;
         padding: 10px 16px;
-        background: #7af1fc;
+        background: ${color};
     }
     .logo-center-wrap{
         width:100%;
@@ -248,11 +86,12 @@ pre{
    .page-title,.navbar-brand,.up-case{
      text-transform: uppercase;
    }
+
    .right-sidebar ul li a.active {
-        color: #44ecfc;
+        color: ${color};
     }
     .right-sidebar ul li a.active:before {
-        background: #44ecfc;
+        background: ${color};
         height: 100%;
         width: 2px;
         left: -26px;
@@ -279,11 +118,14 @@ pre{
         text-decoration:none;
         text-transform: capitalize;
     }
+    ul li.list-group-item a.h2{
+        padding-left:20px;
+    }
     ul.right-menu li a{
         font-size:12px;
     }
     ul.right-menu li a:hover{
-        color:#44ecfc;
+        color:${color};
     }
 
 
@@ -297,7 +139,7 @@ pre{
         border-right:1px solid #fff;
     }
     ul.left-menu li.list-group-item.active a{
-        color:#44ecfc;
+        color:${color};
     }
 
     ul.left-menu li.list-group-item{
@@ -314,7 +156,7 @@ pre{
         width: 100%;
         line-height: 50px;
     }
-    
+
     .left-sidebar{
         transition:all ease 0.4s;
         z-index: 1;
@@ -328,10 +170,13 @@ pre{
         overflow-y: scroll;
     }
     .right-sidebar{
+        overflow-y:scroll;
+        overflow-x:hidden;
         position:fixed;
         top:0;
         right:0;
         width:210px;
+        height:80vh;
         border-left:1px solid #ddd;
     }
     .page-box-left,.page-box-right{
@@ -376,8 +221,8 @@ pre{
         .logo{
             transform:scale(0.8);
         }
-    }
-    `,
+    }`
+    },
     header:(title)=>{
         return `<!DOCTYPE html>
         <html lang="en">
@@ -473,15 +318,18 @@ pre{
     rightSidebar:(source)=>{
         let Dom = document.createElement("ul");
         Dom.innerHTML = source;
-        const allH1 = Dom.querySelectorAll("h1");
+        const heads = Dom.querySelectorAll("h1,h2");
         let rightLists = '';
-
-        if(allH1.length > 0){
-            allH1.forEach((e,i)=>{
-                rightLists += `<li class="list-group-item"><a href="#${e.id}">${i+1} - ${e.innerText}</a></li>`;
+        if(heads.length > 0){
+            let count = 0;
+            heads.forEach((e,i)=>{
+                if(e.tagName == 'H1'){
+                    count++;
+                }
+                rightLists += `<li class="list-group-item"><a class="${e.tagName == 'H2'?'h2':''}" href="#${e.id}"> ${e.tagName == 'H1'?count:''} - ${e.innerText}</a></li>`;
             });
         }
-      
+
        return `</div><!-- col-lg-7 -->
         <div class="col-lg-2">
            <div class="right-sidebar p-4 mt-4">
@@ -497,7 +345,7 @@ pre{
     const leftSidebar  = document.querySelector(".left-sidebar");
     const rightMenu  = document.querySelectorAll(".right-sidebar ul li a");
     const leftMenu  = document.querySelectorAll(".left-sidebar ul li a");
-    
+
     // active class to left sidebar
     leftMenu.forEach(menu=>{
         if(menu.href == window.location.href){
@@ -506,7 +354,7 @@ pre{
                 menu.parentNode.classList.remove("active");
         }
     })
-    
+
     // active class to right sidebar
     rightSidebar.addEventListener("click",e=>{
             rightMenu.forEach(menu=>{
@@ -516,7 +364,7 @@ pre{
                 e.target.classList.add("active");
             }
     })
-    
+
     // smooth scroll to
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {

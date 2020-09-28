@@ -1,6 +1,28 @@
-const mdFiles = document.querySelector("#files");
     const docTitle = document.querySelector("#doc-title");
     const btnGenerate = document.querySelector(".btn-generate");
+    const uploadFom = document.querySelector("#uploadForm");
+
+     // SHow Step Two, Hide One
+     const showStepTwo = ()=>{
+        document.querySelector(".step-one").style.display = 'none';
+        document.querySelector(".step-two").style.display = 'block';
+    }
+
+    // Loading Spinner
+    const loading = (condition)=>{
+        const spinner = document.querySelector(".spinner");
+        spinner.innerHTML = condition?'<div class="loader"></div>':'';
+    }
+
+     // Loading Spinner
+     const showMsg = (condition,msg)=>{
+        const MsgBox = document.querySelector(".message");
+        MsgBox.innerHTML = `<div class="alert ${condition?'alert-success':'alert-danger'}">${msg}</div>`;
+        setTimeout(()=>{
+            MsgBox.innerHTML = '';
+        },3000)
+    }
+
 
     let files = [];
 
@@ -8,20 +30,47 @@ const mdFiles = document.querySelector("#files");
     const md = new showdown.Converter({tables: true});
 
     // Get file names via input
-    const getFileNames = ()=>{
-        for (i = 0; i < mdFiles.files.length; i++) {
-            const filename = mdFiles.files[i].name;
-            fetch("/md/"+filename).then(e=>e.text()).then(res=>{
-                files.push({
-                    name:filename.split(".")[0],
-                    source:md.makeHtml(res)  // convert and store as HTML format
-                })
-            })
+    const uploadFiles = async()=>{
+
+        const mdInput = document.querySelector("input[type='file']");
+        let fileData = new FormData();
+        Object.values(mdInput.files).forEach((file,i)=>{
+            fileData.append('file'+i, file) ;
+        })
+
+        loading(true);
+        const fileUp = await fetch("upload.php",{
+            method:"post",
+            body:fileData
+        })
+        const responseFiles = await fileUp.json();
+        if(responseFiles.status !== 200){
+            showMsg(false,'Failed to upload files');
+            loading(false);
+            return;
         }
+        responseFiles.files.forEach(async filename=>{
+            const readmd = await fetch("/md/"+filename);
+            const res = await readmd.text();
+            const data = {
+                name:filename.split(".")[0],
+                source:md.makeHtml(res)  // convert and store as HTML format
+            };
+            files.push(data)
+        })
+        loading(false);
+        showMsg(true,'Successfully upload files');
+        showStepTwo();
     }
 
+    // Upload files Event
+    uploadFom.addEventListener("submit",e=>{
+        e.preventDefault();
+        uploadFiles();
+    })
+
     // Generate Documentation goes here
-    // most data just grab from config.js 
+    // most data just grab from config.js
     const generateFiles = ()=>{
         if(!docTitle.value){
             alert("Please add document title")
@@ -31,7 +80,7 @@ const mdFiles = document.querySelector("#files");
         let zip = new JSZip();
 
         // destructure from config.js
-        const {footer,lightTheme,darkTheme,scriptText} = config;
+        const {footer,styleFunc,scriptText} = config;
 
         // keep sidebar outside the loop
        const sidebar = config.leftSidebar(docTitle.value,files);
@@ -53,9 +102,9 @@ const mdFiles = document.querySelector("#files");
             zip.file(`${name}.html`, htmlpage);
        }
 
-       // if user check light or dark theme
-       const theme = document.querySelector('input[name="theme"]:checked').value;
-       const styleText = theme == 'dark'?darkTheme:lightTheme;
+       // Theme color
+       const color = document.querySelector('input[name="theme"]').value;
+       const styleText = styleFunc(color);
 
        // create JS folder
        const jsFolder = zip.folder("js");
@@ -69,18 +118,16 @@ const mdFiles = document.querySelector("#files");
        // Add css codes to style.css
        cssFolder.file('style.css', styleText);
 
-    
+
        // Download zip folder with time stamp
        zip.generateAsync({type:"blob"})
             .then(function(content) {
                 const foldername = Date.now();
                 saveAs(content, `doc-${foldername}.zip`);
         });
-        
+
     }
 
-    // Listen on change when user select files
-    mdFiles.addEventListener('change',getFileNames)
 
     //  Listen on when "generate" button click
     btnGenerate.addEventListener('click',generateFiles)
