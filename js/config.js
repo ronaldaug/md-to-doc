@@ -175,7 +175,7 @@ const config = {
         position:fixed;
         top:0;
         right:0;
-        width:210px;
+        width:300px;
         height:80vh;
         border-left:1px solid #ddd;
     }
@@ -262,7 +262,7 @@ const config = {
         </ul>
         </div>
         </div>
-        <div class="col-lg-7">`
+        <div class="col-lg-6">`
     },
     mainContent:(name,source)=>{
         return `<div class="main-content p-4 mb-2">
@@ -331,7 +331,7 @@ const config = {
         }
 
        return `</div><!-- col-lg-7 -->
-        <div class="col-lg-2">
+        <div class="col-lg-3">
            <div class="right-sidebar p-4 mt-4">
                 <p class="up-case">Contents</p>
                 <ul class="right-menu list-group">
