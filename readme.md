@@ -8,7 +8,6 @@
 - Custom Theme Color
 - Pagination ( next and previous )
 - Responsive Design
-- Detect "h1" in a page and make a content menu.
 - Smooth scroll for anchor links
 - Bootstrap 4
 
